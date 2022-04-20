@@ -16,10 +16,10 @@
           const elementLocation = this.el.getBoundingClientRect().bottom + this.el.offsetHeight * 0.8
           if (scrollLocation > elementLocation) {
             const locateEventDay = () => {
-              if (this.current._d.getMonth() < 2) {
+              if (this.current._d.getMonth() < 9) {
                 document.querySelector("#calendar .right").click()
                 locateEventDay()
-              } else if (this.current._d.getMonth() > 2) {
+              } else if (this.current._d.getMonth() > 9) {
                 document.querySelector("#calendar .left").click()
                 locateEventDay()
               } else if (document.querySelector("div.day-events > .orange")) {
@@ -80,8 +80,8 @@
         var self = this;
     
         this.events.forEach(function (ev) {
-          if (self.current._d.getMonth() === 2) {
-            ev.date = self.current.clone().date(7);
+          if (self.current._d.getMonth() === 9) {
+            ev.date = self.current.clone().date(15);
           } else {
             ev.date = self.current.clone().date(33);
           }
@@ -92,6 +92,8 @@
           this.oldMonth.className = "month out " + (self.next ? "next" : "prev");
           this.oldMonth.addEventListener("webkitAnimationEnd", function () {
             self.oldMonth.parentNode.removeChild(self.oldMonth);
+            console.log(self.oldMonth);
+            console.log(self.oldMonth.parentNode);
             self.month = createElement("div", "month");
             self.backFill();
             self.currentMonth();
@@ -340,7 +342,7 @@
     
     !(function () {
       var data = [
-        { eventName: "오후 12시, 홍일과 애니의 결혼식 (12PM, Annie & Hoie's Wedding)", calendar: "Event", color: "orange" },
+        { eventName: "오후 12시, 성구와 예지의 결혼식 (12PM, Yeji & Seonggu's Wedding)", calendar: "Event", color: "orange" },
       ];
     
       function addDate(ev) {}

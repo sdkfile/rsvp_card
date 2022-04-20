@@ -14,7 +14,7 @@
     transition: 0.3s;
     z-index: 300;
   ">
-    <img src="./source/svg/loading-heart.svg" style="transition: all 0.3s ease 0s; width: 200px;" />
+    <img src="https://raw.githubusercontent.com/sdkfile/rsvp_card/master/views/source/svg/loading-heart.svg" style="transition: all 0.3s ease 0s; width: 200px;" />
   </div>
   <div class="dots"></div>
   <div id="cover" class="wrapper">
@@ -22,15 +22,15 @@
       <div class="card">
         <div class="card-locator">
           <div style="padding-top: 45px; padding-bottom: 30px">
-            <h2 id="title_ko">김홍일, 애니 브랏코의 결혼식에 초대합니다!</h2>
-            <h3 id="title_en">Annie Bratko & Hoie Kim: We're getting married!</h3>
+            <h2 id="title_ko">김성구, 이예지의 결혼식에 초대합니다!</h2>
+            <h3 id="title_en">Yeji Lee & Seonggu Kim: We're getting married!</h3>
           </div>
           <hr>
           <div style="padding-top: 10px; padding-bottom: 20px">
-            <h3>2021년 3월 7일 일요일 오후 12시</h3>
-            <p>12PM, Sunday, March 7th, 2021</p>
-            <h3>역삼동 696-20, 다노이 선릉점</h3>
-            <p>Danoi, 696-20, Yeoksam-dong</p>
+            <h3>2022년 10월 15일 토요일 오후 12시</h3>
+            <p>12PM, Saturday, October 15th, 2022</p>
+            <h3>중구 명동길 61, 로얄호텔 서울</h3>
+            <p>Royal Hotel Seoul, 61, Myeongdong-gil, Jung-gu</p>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
   <div id="calendar" class="wrapper">
     <div class="target"></div>
   </div>
-  <div id="info" class="wrapper">
+  <!-- <div id="info" class="wrapper">
     <div class="letter-container">
       <h2>인터넷 생방송 참여 안내</h2>
       <h3>Live Stream Information</h3>
@@ -58,7 +58,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
   <div id="photo_album" class="wrapper">
     <div class="photo_container">
       <img src="./source/jpg/invitation/comming_soon_photo_00.jpg">
@@ -75,10 +75,10 @@
     </div>
   </div>
   <div id="map" class="wrapper">
-    <div id="daumRoughmapContainer1612405357605" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+    <div id="daumRoughmapContainer1650444798200" class="root_daum_roughmap root_daum_roughmap_landing"></div>
   </div>
   <div id="footer">
-    <p>Made by Hoie.Kim</p>
+    <p>Made by Hoie.Kim, Edited by Seonggu.Kim</p>
   </div>
 
 </body>
@@ -101,16 +101,16 @@
 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 <script charset="UTF-8">
   const renderMap = () => {
-    document.getElementById("daumRoughmapContainer1612405357605").innerHTML = ""
+    document.getElementById("daumRoughmapContainer1650444798200").innerHTML = ""
     const map = document.getElementById("map")
     const mapWidth = map.offsetWidth
     const mapHeight = window.innerHeight / 2
     new daum.roughmap.Lander({
-      "timestamp" : "1612405357605",
-      "key" : "24agd",
-      "mapWidth" : mapWidth,
-      "mapHeight" : mapHeight
-    }).render();
+		"timestamp" : "1650444798200",
+		"key" : "29wje",
+		"mapWidth" : mapWidth,
+		"mapHeight" : mapHeight
+	}).render();
   }
 
   renderMap()
@@ -118,12 +118,12 @@
   let isWide = true
   const resize = () => {
     if (window.innerWidth < 870 && isWide) {
-      document.getElementById("title_ko").innerHTML = "김홍일, 애니 브랏코의 결혼식에<br/>초대합니다!"
-      document.getElementById("title_en").innerHTML = "Annie Bratko & Hoie Kim:<br/>We're getting married!"
+      document.getElementById("title_ko").innerHTML = "김성구, 이예지의 결혼식에<br/>초대합니다!"
+      document.getElementById("title_en").innerHTML = "Yeji Lee & Seonggu Kim:<br/>We're getting married!"
       isWide = false
     } else if (window.innerWidth >= 870 && !isWide){
-      document.getElementById("title_ko").innerHTML = "김홍일, 애니 브랏코의 결혼식에 초대합니다!"
-      document.getElementById("title_en").innerHTML = "Annie Bratko & Hoie Kim: We're getting married!"
+      document.getElementById("title_ko").innerHTML = "김성구, 이예지의 결혼식에 초대합니다!"
+      document.getElementById("title_en").innerHTML = "Yeji Lee & Seonggu Kim: We're getting married!"
       isWide = true
     }
   }
@@ -132,9 +132,9 @@
 
   window.addEventListener("resize", resize)
 
-  document.querySelector(".stream-link button").addEventListener("click", () => {
-    alert("방송은 예식 진행 30분 전 시작 예정입니다!\nLive stream will start 30 minutes prior to the wedding ceremony!")
-  })
+  // document.querySelector(".stream-link button").addEventListener("click", () => {
+  //   alert("방송은 예식 진행 30분 전 시작 예정입니다!\nLive stream will start 30 minutes prior to the wedding ceremony!")
+  // })
 </script>
 
 <%- include('./partials/calendar_style') %>
