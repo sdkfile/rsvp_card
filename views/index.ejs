@@ -1,5 +1,31 @@
 <%- include('./partials/head_invite') %>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="./js/jquery.magnific-popup.js"></script>
 
+<script>
+  
+  jQuery(document).ready(function($){
+    jQuery('.image-popup-vertical-fit').magnificPopup({
+      type: 'image',
+      mainClass: 'mfp-with-zoom', 
+      gallery:{
+          enabled:true
+        },
+
+      zoom: {
+        enabled: true, 
+
+        duration: 300, // duration of the effect, in milliseconds
+        easing: 'ease-in-out', // CSS transition easing function
+
+        opener: function(openerElement) {
+
+          return openerElement.is('img') ? openerElement : openerElement.find('img');
+      }
+    }
+    });
+  });
+</script>
 <body>
   <div id="loading-bar" style="
     position: fixed;
@@ -39,40 +65,100 @@
   <div id="calendar" class="wrapper">
     <div class="target"></div>
   </div>
-  <!-- <div id="info" class="wrapper">
-    <div class="letter-container">
-      <h2>인터넷 생방송 참여 안내</h2>
-      <h3>Live Stream Information</h3>
-      <p>
-        저희 결혼식은 코로나-19 방역 지침에 따라 50인 이하의 참석자만이 허용됩니다. 많은 분들께서 축하해주시고 싶은 마음을 가지고 계신 것을 알기에 안타깝지만 식장에는 가족들과 가까운 친구들을 모시고자 합니다. 이 청첩장을 받으신 여러분께서는 실시간으로 중계되는 인터넷 스트리밍 방송을 통해 어디서든 결혼식에 참여하실 수 있습니다. 아래 버튼을 눌러 스트리밍 페이지로 이동해주세요.
-      </p>
-      <p class="second">
-        According to quarantine policy related to COVID-19, our wedding is not allowed to have more than 50 people in the place. We are very sorry that we can only invite family and close friends. Since you have this invitation, you can watch our live stream wedding ceremony via internet. Please click the button below.
-      </p>
-      <div class="stream-link">
-        <a href="/love/stream" target="_blank">
-          <button>
-            <p>시청하기</p>
-            <p>Watch</p>
-          </button>
+  
+  <div id="photo_album" class="wrapper">
+    <section class="img-gallery-magnific">
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" title="9.jpg">
+          <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="9.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
         </a>
       </div>
-    </div>
-  </div> -->
-  <div id="photo_album" class="wrapper">
-    <div class="photo_container">
-      <img src="./source/jpg/invitation/comming_soon_photo_00.jpg">
-    </div>
-    <div class="photo_container">
-      <img src="./source/jpg/invitation/comming_soon_photo_01.jpg">
-    </div>
-    <div class="photo_container">
-      <img src="./source/jpg/invitation/comming_soon_photo_02.jpg">
-    </div>
-    <div class="photo_comming_soon">
-      <h2>준비중입니다!</h2>
-      <p>Comming Soon!</p>
-    </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/900/?random" title="10.jpg">
+          <img src="https://unsplash.it/900/?random" alt="10.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/902" title="3.jpg">
+          <img src="https://unsplash.it/902/" alt="3.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/901" title="4.jpg">
+          <img src="https://unsplash.it/901" alt="4.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/888/?random" title="1.jpg">
+          <img src="https://unsplash.it/888/?random" alt="1.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/931/?random" title="2.jpg">
+          <img src="https://unsplash.it/931/?random" alt="2.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/908/?random" title="5.jpg">
+          <img src="https://unsplash.it/908/?random" alt="5.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/978/?random" title="6.jpg">
+          <img src="https://unsplash.it/978/?random" alt="6.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/857/?random" title="7.jpg">
+          <img src="https://unsplash.it/857/?random" alt="7.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/905/?random" title="8.jpg">
+          <img src="https://unsplash.it/905/?random" alt="8.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/1230/?random" title="12.jpg">
+          <img src="https://unsplash.it/1230/?random" alt="12.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/800/?random" title="13.jpg">
+          <img src="https://unsplash.it/800/?random" alt="13.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/930/?random" title="14.jpg">
+          <img src="https://unsplash.it/930/?random" alt="14.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/999/?random" title="15.jpg">
+          <img src="https://unsplash.it/999/?random" alt="15.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="magnific-img">
+        <a class="image-popup-vertical-fit" href="https://unsplash.it/897/?random" title="16.jpg">
+          <img src="https://raw.githubusercontent.com/sdkfile/rsvp_card/master/views/source/pic/invitation.jpeg" alt="16.jpg" />
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
   </div>
   <div id="map" class="wrapper">
     <div id="daumRoughmapContainer1650444798200" class="root_daum_roughmap root_daum_roughmap_landing"></div>
@@ -80,7 +166,6 @@
   <div id="footer">
     <p>Made by Hoie.Kim, Edited by Seonggu.Kim</p>
   </div>
-
 </body>
 
 <script>
@@ -97,7 +182,10 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 <%- include('./partials/calendar_script') %>
-
+<%- include('./partials/gallery_style') %>
+<%- include('./partials/calendar_style') %>
+<%- include('./partials/style_invite') %>
+<%- include('./partials/falling_dots') %>
 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 <script charset="UTF-8">
   const renderMap = () => {
@@ -131,15 +219,36 @@
   resize()
 
   window.addEventListener("resize", resize)
+  // const imagePopup = () => {
+  //   $('.image-popup-vertical-fit').magnificPopup({
+  //     type: 'image',
+  //     mainClass: 'mfp-with-zoom', 
+  //     gallery:{
+  //         enabled:true
+  //       },
+  //     zoom: {
+  //       enabled: true, 
+  //       duration: 300, // duration of the effect, in milliseconds
+  //       easing: 'ease-in-out', // CSS transition easing function
+  //       opener: function(openerElement) {
+  //         console.log(openerElement);
+  //         return openerElement.is('img') ? openerElement : openerElement.find('img');
+  //       }
+  //     }
+  //   });
+  // }
+  // imagePopup()
+  // var elements = document.getElementsByClassName("image-popup-vertical-fit");
 
-  // document.querySelector(".stream-link button").addEventListener("click", () => {
-  //   alert("방송은 예식 진행 30분 전 시작 예정입니다!\nLive stream will start 30 minutes prior to the wedding ceremony!")
-  // })
+  // var myFunction = function() {
+  //     var attribute = this.getAttribute("data-myattribute");
+  //     alert(attribute);
+  // };
+
+  // for (var i = 0; i < elements.length; i++) {
+  //     elements[i].addEventListener('click', imagePopup, false);
+  // }
 </script>
-
-<%- include('./partials/calendar_style') %>
-<%- include('./partials/style_invite') %>
-<%- include('./partials/falling_dots') %>
 
 <script>
   function docReady(fn) {
