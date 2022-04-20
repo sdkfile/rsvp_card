@@ -1,0 +1,218 @@
+<style>
+    *::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      font-family: 'Open Sans';
+      font-weight: 100;
+    }
+    body {
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+    blockquote {
+      background-color: rgb(55,55,55);
+      border-left: 3px solid rgb(75,75,75);
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding: 1rem;
+    }
+    h1 {
+      border-bottom: 1px solid rgb(75,75,75);
+      text-align: center;
+    }
+    h1, h2, h3, h4, h5 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    hr {
+      border: 0.5px solid rgb(220,220,200);
+    }
+    p {
+      margin: 0;
+    }
+    input {
+      background-color: white;
+      color: black;
+      box-shadow: 2px 2px 5px grey inset;
+      border: none;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 3px;
+      height: 40px;
+      width: 200px;
+    }
+    ::placeholder {
+      color: grey;
+      font-size: 0.8rem;
+    }
+  </style>
+  
+  <style>
+    .wrapper {
+      background-color: #f4f4f4;
+      position: relative;
+      margin: 10vh auto;
+      padding: 50px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90vw;
+      min-width: 600px;
+      max-width: 940px;
+      box-shadow: 10px 50px 100px 0 rgb(0 0 0 / 20%);
+    }
+    #cover {
+      height: 90vh;
+      min-height: 1000px;
+      max-height: 1419px;
+      background-image: url("/source/jpg/invitation/wedding_photo_00.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-top: 5vh;
+      padding: 0;
+    }
+    #footer {
+      text-align: center;
+      margin: 10vh 0 5vh;
+    }
+  
+    .container, .card, .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+    .container {
+      border: solid 50px rgba(255,255,255,0.75);
+      width: 80%;
+      max-width: 900px;
+      height: 60%;
+      max-height: 900px;
+    }
+    .card {
+      background-color: rgba(255,255,255,0.75);
+      width: calc(100% - 2px);
+      max-width: 898px;
+      height: calc(100% - 2px);
+      max-height: 898px;
+      overflow-Y: scroll;
+    }
+    .card > * {
+      text-align: center;
+    }
+    .card-locator {
+      width: 90%;
+    }
+  
+    i, .popup {
+      cursor: pointer;
+    }
+    .icons {
+      height: 50px;
+      margin: 10px;
+      margin-top: 20px;
+    }
+    i {
+      margin: 15px;
+      font-size: 30px;
+      transition: 0.1s;
+    }
+    i:hover {
+      font-size: 34px;
+    }
+    .popup {
+      position: fixed;
+      background-color: rgba(80,80,80,0.5);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 50px 50px;
+      padding: 30px;
+      padding-left: 300px;
+      padding-right: 300px;
+      top: calc(50vh - 250px);
+      left: calc(50vw - 500px);
+    }
+    .hide {
+      display: none;
+    }
+  
+    .letter-container {
+      width: 80%;
+    }
+    .letter-container * {
+      text-align: center;
+      word-break: keep-all;
+    }
+    .letter-container > h2 {
+      border-bottom: 1px solid rgb(200,200,200);
+      margin: 0;
+    }
+    .letter-container > h3 {
+      margin: 0;
+      margin-bottom: 30px;
+    }
+    .letter-container > p.second {
+      margin: 20px 0 50px;
+    }
+    .stream-link {
+      margin: 20px 0;
+    }
+    .stream-link > a {
+      text-decoration: none;
+    }
+    .stream-link > a > button {
+      cursor: pointer;
+      background-color: white;
+      width: 40%;
+      font-size: 1rem;
+      padding: 10px 0;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(160deg, #f0f0f0, #fff);
+      box-shadow:  4px 4px 8px #e8e8e8,
+                  -5px -5px 10px #fff;
+    }
+    .stream-link > a > button:hover {
+      box-shadow:  2px 2px 4px #e8e8e8,
+                  -3px -3px 6px #fff;
+    }
+  
+    .photo_box {
+      width: 100%;
+      overflow: hidden;
+    }
+  
+    #photo_album_view {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      transition: 0.3s;
+    }
+  
+    #photo_album_roll {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .photo_roll_slot {
+      overflow: hidden;
+      width: 200px;
+      height: 100px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+    }
+  
+    .photo_roll_slot > img {
+      height: 100px;
+      cursor: pointer;
+    }
+  </style>
+  
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">

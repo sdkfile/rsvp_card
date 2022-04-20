@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  },
+  "name": "invite",
+  "version": "1.0.0",
+  "description": "RSVP card format",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "run test"
+  },
+  "author": "",
+  "license": "ISC"
+}

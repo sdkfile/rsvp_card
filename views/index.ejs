@@ -1,0 +1,165 @@
+<%- include('./partials/head_invite') %>
+
+<body>
+  <div id="loading-bar" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 300;
+  ">
+    <img src="./source/svg/loading-heart.svg" style="transition: all 0.3s ease 0s; width: 200px;" />
+  </div>
+  <div class="dots"></div>
+  <div id="cover" class="wrapper">
+    <div class="container">
+      <div class="card">
+        <div class="card-locator">
+          <div style="padding-top: 45px; padding-bottom: 30px">
+            <h2 id="title_ko">김홍일, 애니 브랏코의 결혼식에 초대합니다!</h2>
+            <h3 id="title_en">Annie Bratko & Hoie Kim: We're getting married!</h3>
+          </div>
+          <hr>
+          <div style="padding-top: 10px; padding-bottom: 20px">
+            <h3>2021년 3월 7일 일요일 오후 12시</h3>
+            <p>12PM, Sunday, March 7th, 2021</p>
+            <h3>역삼동 696-20, 다노이 선릉점</h3>
+            <p>Danoi, 696-20, Yeoksam-dong</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="calendar" class="wrapper">
+    <div class="target"></div>
+  </div>
+  <div id="info" class="wrapper">
+    <div class="letter-container">
+      <h2>인터넷 생방송 참여 안내</h2>
+      <h3>Live Stream Information</h3>
+      <p>
+        저희 결혼식은 코로나-19 방역 지침에 따라 50인 이하의 참석자만이 허용됩니다. 많은 분들께서 축하해주시고 싶은 마음을 가지고 계신 것을 알기에 안타깝지만 식장에는 가족들과 가까운 친구들을 모시고자 합니다. 이 청첩장을 받으신 여러분께서는 실시간으로 중계되는 인터넷 스트리밍 방송을 통해 어디서든 결혼식에 참여하실 수 있습니다. 아래 버튼을 눌러 스트리밍 페이지로 이동해주세요.
+      </p>
+      <p class="second">
+        According to quarantine policy related to COVID-19, our wedding is not allowed to have more than 50 people in the place. We are very sorry that we can only invite family and close friends. Since you have this invitation, you can watch our live stream wedding ceremony via internet. Please click the button below.
+      </p>
+      <div class="stream-link">
+        <a href="/love/stream" target="_blank">
+          <button>
+            <p>시청하기</p>
+            <p>Watch</p>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="photo_album" class="wrapper">
+    <div class="photo_container">
+      <img src="./source/jpg/invitation/comming_soon_photo_00.jpg">
+    </div>
+    <div class="photo_container">
+      <img src="./source/jpg/invitation/comming_soon_photo_01.jpg">
+    </div>
+    <div class="photo_container">
+      <img src="./source/jpg/invitation/comming_soon_photo_02.jpg">
+    </div>
+    <div class="photo_comming_soon">
+      <h2>준비중입니다!</h2>
+      <p>Comming Soon!</p>
+    </div>
+  </div>
+  <div id="map" class="wrapper">
+    <div id="daumRoughmapContainer1612405357605" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+  </div>
+  <div id="footer">
+    <p>Made by Hoie.Kim</p>
+  </div>
+
+</body>
+
+<script>
+  const dots = document.querySelector(".dots")
+  const makedots = (n, i=0) => {
+    if (i === n) return
+    const element = document.createElement("span")
+    element.classList.add("dot")
+    dots.append(element)
+    return makedots(n, i+1)
+  }
+  makedots(100)
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+<%- include('./partials/calendar_script') %>
+
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+<script charset="UTF-8">
+  const renderMap = () => {
+    document.getElementById("daumRoughmapContainer1612405357605").innerHTML = ""
+    const map = document.getElementById("map")
+    const mapWidth = map.offsetWidth
+    const mapHeight = window.innerHeight / 2
+    new daum.roughmap.Lander({
+      "timestamp" : "1612405357605",
+      "key" : "24agd",
+      "mapWidth" : mapWidth,
+      "mapHeight" : mapHeight
+    }).render();
+  }
+
+  renderMap()
+
+  let isWide = true
+  const resize = () => {
+    if (window.innerWidth < 870 && isWide) {
+      document.getElementById("title_ko").innerHTML = "김홍일, 애니 브랏코의 결혼식에<br/>초대합니다!"
+      document.getElementById("title_en").innerHTML = "Annie Bratko & Hoie Kim:<br/>We're getting married!"
+      isWide = false
+    } else if (window.innerWidth >= 870 && !isWide){
+      document.getElementById("title_ko").innerHTML = "김홍일, 애니 브랏코의 결혼식에 초대합니다!"
+      document.getElementById("title_en").innerHTML = "Annie Bratko & Hoie Kim: We're getting married!"
+      isWide = true
+    }
+  }
+
+  resize()
+
+  window.addEventListener("resize", resize)
+
+  document.querySelector(".stream-link button").addEventListener("click", () => {
+    alert("방송은 예식 진행 30분 전 시작 예정입니다!\nLive stream will start 30 minutes prior to the wedding ceremony!")
+  })
+</script>
+
+<%- include('./partials/calendar_style') %>
+<%- include('./partials/style_invite') %>
+<%- include('./partials/falling_dots') %>
+
+<script>
+  function docReady(fn) {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      setTimeout(fn, 1000);
+    } else {
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(fn, 1000);
+      });
+    }
+  } 
+  docReady(() => {
+    const loadingBar = document.getElementById("loading-bar")
+    loadingBar.firstElementChild.style.width = "1500px"
+    loadingBar.firstElementChild.style.opacity = 0
+    setTimeout(() => {
+      loadingBar.style.backgroundColor = "transparent"
+      setTimeout(() => {
+        loadingBar.remove()
+      }, 300)
+    }, 200)
+  })
+</script>
